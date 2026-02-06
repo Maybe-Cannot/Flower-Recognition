@@ -1,0 +1,38 @@
+{
+    "model_type": "convnext_base",
+    "num_classes": 102,
+    "img_size": 224,
+    "class_to_idx": {},
+    "best_accuracy": 0.0,
+    "training_params": {
+        "batch_size": 64,
+        "epochs": 50,
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "label_smoothing": 0.1,
+        "optimizer": "Adam",
+        "seed": 42
+    },
+    "lr_scheduler": {
+        "type": "CosineAnnealingLR",
+        "T_max": 10,
+        "eta_min": 0.0001
+    },
+    "data_augmentation": {
+        "random_resized_crop": 224,
+        "random_horizontal_flip": true,
+        "resize": 256,
+        "center_crop": 224
+    },
+    "normalization": {
+        "mean": [0.485, 0.456, 0.406],
+        "std": [0.229, 0.224, 0.225]
+    },
+    "model_details": {
+        "pretrained_weights": "ImageNet",
+        "frozen_layers": "all_except_classifier",
+        "classifier_in_features": 1024,
+        "classifier_out_features": 102
+    },
+    "description": "ConvNeXt-Base based flower classification model with 102 classes"
+}

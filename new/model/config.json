@@ -1,0 +1,28 @@
+{
+    "model": "/workspace/new/code/../model/yolo11m-cls.pt",
+    "num_classes": 100,
+    "data_dir": "/workspace/code/data/train",
+    "training": {
+        "epochs": 50,
+        "batch": 16,
+        "imgsz": 600,
+        "optimizer": "Adam",
+        "lr0": 0.001,
+        "lrf": 0.01,
+        "weight_decay": 0.0005,
+        "momentum": 0.937,
+        "patience": 5,
+        "seed": 2025,
+        "amp": true,
+        "cls": 0.5
+    },
+    "augmentation": {
+        "framework": "Custom (RandAugment + ColorJitter + RandomErasing)",
+        "hsv_h": 0.001,
+        "hsv_s": 0.1,
+        "hsv_v": 0,
+        "fliplr": 0.5,
+        "flipud": 0.001,
+        "erasing": 0.0
+    }
+}
